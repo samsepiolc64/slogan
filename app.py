@@ -1,12 +1,11 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, Response, flash, session
 from os import getenv
 from dotenv import load_dotenv
 import openai
-import os
-
-
 
 app = Flask(__name__)
+load_dotenv()
 openai.api_key  = os.environ.get('API_KEY')
 
 def get_completion(prompt, model="gpt-3.5-turbo"):
@@ -28,5 +27,7 @@ def start():
     Niech hasło będzie maksymalnie z 10 wyrazów.
     Review text: '''{lamp_review}'''
     """
-    response = get_completion(prompt)
+    # response = get_completion(prompt)
+    response = "hello"
+    
     return render_template('index.html', txt=response)
