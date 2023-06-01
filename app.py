@@ -3,8 +3,11 @@ from os import getenv
 import openai
 import os
 
-openai.api_key  = getenv('API_KEY')
+
+# openai.api_key = <API-KEY>
+load_dotenv()
 app = Flask(__name__)
+openai.api_key  = getenv('API_KEY')
 
 def get_completion(prompt, model="gpt-3.5-turbo"):
     messages = [{"role": "user", "content": prompt}]
