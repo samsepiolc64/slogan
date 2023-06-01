@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, Response, flash, session
 from os import getenv
+from dotenv import load_dotenv
 import openai
 import os
 
